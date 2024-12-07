@@ -19,18 +19,18 @@
         </nav>
     </header>
     <main>
-        <section id="home">
+        <section id="home" class="invisible">
             <h1>About me</h1>
                 <div class="home">
                     <img src="image/Photo.jpg" alt="my photo">
                     <div class="introduction">
-                        <p>Hi, I'm <span>Raed</span> !</p>
-                        <p> I'm a passionate computer science student with a strong interest in web development and software engineering. I enjoy creating intuitive, responsive, and efficient web applications using modern technologies. My goal is to continually improve my skills, contribute to impactful projects, and stay curious about the ever-evolving world of technology.</p>
+                        <p>Hi, I'm Raed.</p>
+                        <p> I'm a passionate computer science student with a strong interest in <span>web development</span>. I enjoy creating intuitive, responsive, and efficient web applications using modern technologies. My goal is to continually improve my skills, contribute to impactful projects, and stay curious about the ever-evolving world of technology.</p>
                         <p>Feel free to connect with me or check out my projects below!</p>
                     </div>
                 </div>
         </section>
-        <section id="projects">
+        <section id="projects" class="invisible">
             <h1>Projects</h1>
             <div class="skyrim left">
                 <h2>Skyrim</h2>
@@ -69,7 +69,7 @@
                 <a href="https://github.com/RaedNaamoun/Landing-Page-For-a-Jewelry-Store" target="_blank"> <i class="fab fa-github"></i> Github link</a>
             </div>
         </section>
-        <section id="contact">
+        <section id="contact" class="invisible">
             <h1>Contact</h1>
             <p>I'd love to hear from you! Whether it's about a project, a collaboration, or just to say hi, feel free to get in touch.</p>
             <div class="contact-options">
@@ -99,6 +99,23 @@
             });
           });
         });
+
+        const home = document.getElementById('home');
+        const projects = document.getElementById('projects');
+        const contact = document.getElementById('contact');
+
+        setTimeout(() => {
+            home.classList.remove('invisible');
+            home.classList.add('visible');
+    }, 1000);
+    setTimeout(() => {
+        projects.classList.remove('invisible');
+        projects.classList.add('visible');
+    }, 2000);
+    setTimeout(() => {
+        contact.classList.remove('invisible');
+        contact.classList.add('visible');
+    }, 3000);
       </script>
       
 </body>
