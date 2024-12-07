@@ -116,19 +116,6 @@ h1 {
     border-top: 1px solid white;
 }
 
-.left{
-    width: 40vw;
-    margin-left: 5rem;
-    margin-right: auto;
-    margin-bottom: 5rem;
-}
-.right{
-    width: 40vw;
-    margin-left: auto;
-    margin-right: 5rem;
-    margin-bottom: 7rem;
-}
-
 #projects a{
     border: 1px solid #2dbeff;
     padding: 1rem;
@@ -196,7 +183,11 @@ footer {
     border-top: 1px solid white;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1270px) {
+    .introduction p:first-child{
+        font-size: 3rem;
+        line-height: 0;
+    }
     .home {
       flex-direction: column;
       align-items: center;
@@ -204,14 +195,6 @@ footer {
     img{
         margin-left: auto;
         margin-right: 20rem;
-    }
-    .left{
-        margin: 5rem auto;
-        width: 90vw;
-    }
-    .right{
-        margin: 5rem auto;
-        width: 90vw;
     }
     .introduction{
         padding-right: 0;
@@ -223,6 +206,11 @@ footer {
     }
   }
 @media (max-width: 900px) {
+    .introduction p:first-child{
+        font-size: 2.5rem;
+        line-height: 0;
+    }
+
     header h1{
         font-size: 1.5rem;
     }
@@ -232,31 +220,20 @@ footer {
     .introduction p{
         font-size: 1.1rem;
     }
-    .left{
-        margin: 5rem auto;
-        width: 90vw;
-    }
-    .right{
-        margin: 5rem auto;
-        width: 90vw;
-    }
     
 }
 
 @media (max-width: 430px) {
+    .introduction p:first-child{
+        font-size: 2rem;
+        line-height: 0;
+    }
+
     header h1{
         font-size: 1rem;
     }
     header a{
         font-size: 0.7rem;
-    }
-    .left{
-        margin: 5rem auto;
-        width: 90vw;
-    }
-    .right{
-        margin: 5rem auto;
-        width: 90vw;
     }
     nav ul{
         margin-right: 0;
@@ -294,4 +271,13 @@ footer {
       transform: translateY(0);
       opacity: 1;
     }
+  }
+
+  .gradiant{
+    border-radius: 50px;
+    background: linear-gradient(90deg, #0C0C0C, #1d1d1d);
+    padding: 2rem;
+    margin-bottom: 5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
