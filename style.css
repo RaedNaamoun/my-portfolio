@@ -27,7 +27,7 @@ header{
     background-color: #0C0C0C;
     position: fixed;
     width: 100vw;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.377);
     z-index: 100;
 }
 
@@ -101,6 +101,27 @@ h1 {
     line-height: 0;
 }
 
+/*skills*/
+#skills{
+  border-top: 1px solid white;
+  padding-top: 2rem;
+}
+
+#skills div{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#skills>div img{
+  width: 100px;
+  height: auto;
+  margin-bottom: 4rem;
+}
+
+.react-img{
+  animation: rotate 4s linear infinite;
+}
 /*Projects*/
 #projects{
     background: #0C0C0C;
@@ -187,6 +208,15 @@ footer {
     }
   }
 
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   .gradiant{
     border-radius: 50px;
     background: linear-gradient(50deg, #0C0C0C, #1d1d1d);
@@ -235,6 +265,10 @@ footer {
         padding-right: 2rem;
         padding-left: 2rem;
     }
+    #skills>div img{
+      width: 60px;
+      margin: 4rem 1rem;
+    }
   }
 @media (max-width: 900px) {
     .introduction p:first-child{
@@ -255,7 +289,10 @@ footer {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
     }
-    
+    #skills>div img{
+      width: 40px;
+      margin: 2rem 1rem;
+    }
 }
 
 @media (max-width: 430px) {
@@ -269,10 +306,11 @@ footer {
     }
 
     header h1{
-        font-size: 0.7rem;
+        font-size: 0.55rem;
+        margin-left: 0.6rem;
     }
     header a{
-        font-size: 0.6rem;
+        font-size: 0.5rem;
     }
     nav ul{
         margin-right: 0;
