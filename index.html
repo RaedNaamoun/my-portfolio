@@ -19,7 +19,7 @@
         </nav>
     </header>
     <main>
-        <section id="home" class="invisible">
+        <section id="home" class="fade-in">
             <h1>About me</h1>
                 <div class="home">
                     <img src="image/Photo.jpg" alt="my photo">
@@ -30,9 +30,10 @@
                     </div>
                 </div>
         </section>
-        <section id="projects" class="invisible">
+        <section id="projects" class="fade-in">
             <h1>Projects</h1>
-            <div class="skyrim left gradiant">
+            <div class="container">
+            <div class="skyrim left gradiant fade-in">
                 <h2>Skyrim</h2>
                 <p>Member of a 5-person project team for the development of a web-based application that shows an interactive map of Skyrim.
                     The project involved selecting and calculating the shortest route between two cities using the Dijkstra algorithm.
@@ -42,7 +43,7 @@
                     effective planning, team collaboration and implementation of complex functions greatly improved.</p>
                 <a href="https://github.com/RaedNaamoun/Skyrim" target="_blank"><i class="fab fa-github"></i> View on Github</a>
             </div>
-            <div class="shopping-list right gradiant">
+            <div class="shopping-list right gradiant fade-in">
                 <h2>Shopping list</h2>
                 <p>Developed a full-stack web application for the management of 
                     shopping lists using TypeScript, Node.js, Express, PostgreSQL and React. 
@@ -51,7 +52,7 @@
                     To ensure API functionality, automated tests were implemented using Jest and Supertest.</p>
                 <a href="https://github.com/RaedNaamoun/Einkaufslisten-App" target="_blank"><i class="fab fa-github"></i> View on Github</a>
             </div>
-            <div class="password-strength-checker left gradiant">
+            <div class="password-strength-checker left gradiant fade-in">
                 <h2>Password strength checker</h2>
                 <p>I have developed an innovative web application that allows
                     users to test the strength of their passwords and learn how
@@ -63,13 +64,14 @@
                     immediate feedback.</p>
                 <a href="https://github.com/RaedNaamoun/Password-Strength-Checker-" target="_blank"><i class="fab fa-github"></i> View on Github</a>
             </div>
-            <div class="jewlery-store right gradiant">
+            <div class="jewlery-store right gradiant fade-in">
                 <h2>Jewlery Store</h2>
                 <p>Designed and developed a responsive and visually appealing landing page for "Mangata & Gallo," a fictional Austin-based jewelry store specializing in engagement, wedding, and anniversary pieces. The project utilized HTML5 for structure and CSS3 for styling, with a focus on modern web design principles and a minimalistic aesthetic. High-quality images and branding assets were seamlessly integrated, complemented by custom fonts (Playfair Display and Lora) and a cohesive color scheme. The layout features a clean navigation menu and sections to showcase featured products, ensuring an elegant user experience across devices through a mobile-first design approach.</p>
                 <a href="https://github.com/RaedNaamoun/Landing-Page-For-a-Jewelry-Store" target="_blank"> <i class="fab fa-github"></i> View on Github</a>
             </div>
+        </div>
         </section>
-        <section id="contact" class="invisible">
+        <section id="contact" class="fade-in">
             <h1>Contact</h1>
             <p>I'd love to hear from you! Whether it's about a project, a collaboration, or just to say hi, feel free to get in touch.</p>
             <div class="contact-options">
@@ -100,22 +102,20 @@
           });
         });
 
-        const home = document.getElementById('home');
-        const projects = document.getElementById('projects');
-        const contact = document.getElementById('contact');
+        document.addEventListener("DOMContentLoaded", () => {
+  const fadeElements = document.querySelectorAll('.fade-in');
 
-        setTimeout(() => {
-            home.classList.remove('invisible');
-            home.classList.add('visible');
-    }, 1000);
-    setTimeout(() => {
-        projects.classList.remove('invisible');
-        projects.classList.add('visible');
-    }, 2000);
-    setTimeout(() => {
-        contact.classList.remove('invisible');
-        contact.classList.add('visible');
-    }, 3000);
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Stop observing once visible
+      }
+    });
+  }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+  fadeElements.forEach(element => observer.observe(element));
+});
       </script>
       
 </body>
