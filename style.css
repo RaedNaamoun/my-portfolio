@@ -23,7 +23,7 @@ header a {
 header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     background-color: #0C0C0C;
     position: fixed;
     width: 100vw;
